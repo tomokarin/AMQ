@@ -56,4 +56,3 @@ quiz._playerAnswerListner = new Listener(
         that.videoTimerBar.updateState(data.progressBarState)
     }
 )
-();
