@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         AMQ Player Answer Time Display
 // @namespace    http://tampermonkey.net/
-// @version      1.0
+// @version      0.1
 // @description  Makes you able to see how quickly people answered (Modify Something which suitable myself)
 // @auther       tomokarin
 // @match        https://animemusicquiz.com/*
