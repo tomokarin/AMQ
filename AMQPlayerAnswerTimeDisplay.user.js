@@ -10,6 +10,18 @@
 // @copyright    MIT license
 // ==/UserScript==
 
+// don't load on login page
+if (document.getElementById("startPage")) return;
+
+// Wait until the LOADING... screen is hidden and load script
+let loadInterval = setInterval(() => {
+    if (document.getElementById("loadingScreen").classList.contains("hidden")) {
+        setup();
+        clearInterval(loadInterval);
+    }
+}, 500);
+
+//Main Script
 let ignoredPlayerIds = []
 
 new Listener("Game Starting", ({players}) => {
