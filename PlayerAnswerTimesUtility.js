@@ -1,10 +1,9 @@
 // ==UserScript==
 // @name         AMQ Player Answer Times Utility
 // @namespace    http://tampermonkey.net/
-// @version      1.2
+// @version      1.0
 // @description  Stores time spent answering per player (Modify Something which suitable myself)
-// @author       Zolhungaj
-// @modifier     tomokarin
+// @author       tomokarin
 // @match        https://animemusicquiz.com/*
 // @grant        none
 // @copyright    MIT license
