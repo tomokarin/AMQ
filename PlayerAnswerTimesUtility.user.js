@@ -6,6 +6,8 @@
 // @author       tomokarin
 // @match        https://animemusicquiz.com/*
 // @grant        none
+// @downloadURL  https://github.com/tomokarin/AMQ/edit/main/PlayerAnswerTimesUtility.user.js
+// @updateURL    https://github.com/tomokarin/AMQ/edit/main/PlayerAnswerTimesUtility.user.js
 // @copyright    MIT license
 // ==/UserScript==
 
