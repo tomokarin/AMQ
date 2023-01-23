@@ -1,2 +1,2 @@
 # AMQ
-Modify Some AMQ-Scripts that will more comfortable for me.
+Change the Timedisplay for "s" instead of "ms"
