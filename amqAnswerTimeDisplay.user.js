@@ -1,5 +1,5 @@
 // ==UserScript==
-// @name         AMQ Player Answer Time Display
+// @name         AMQ Answer Time Display
 // @namespace    http://tampermonkey.net/
 // @version      0.1
 // @author       you
@@ -7,7 +7,6 @@
 // @grant        none
 // @require      https://github.com/tomokarin/AMQ/raw/main/PlayerAnswerTimesUtility.user.js
 // @updateURL    https://github.com/tomokarin/AMQ/raw/main/AMQPlayerAnswerTimeDisplay.user.js
-// @copyright    MIT license
 // ==/UserScript==
 
 // don't load on login page
