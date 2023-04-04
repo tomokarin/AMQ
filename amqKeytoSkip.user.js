@@ -3,8 +3,8 @@
 // @version      0.1
 // @description  use "`" key to active skip.
 // @author       tomokarin
-// @updateURL    
-// @downloadURL  
+// @updateURL    https://github.com/tomokarin/AMQ/raw/main/amqKeytoSkip.user.js
+// @downloadURL  https://github.com/tomokarin/AMQ/raw/main/amqKeytoSkip.user.js
 // @match        https://animemusicquiz.com/*
 // ==/UserScript==
 
@@ -16,7 +16,7 @@ let loadInterval = setInterval(() => {
   }
 }, 500);
 
-// key to active skip
+// key to active skip, can change to any key you want.
 document.addEventListener("keyup", function (event) {
   if (event.key === "`") {
     event.preventDefault();
