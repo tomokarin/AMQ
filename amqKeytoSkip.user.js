@@ -17,7 +17,7 @@ let loadInterval = setInterval(() => {
 }, 500);
 
 // key to active skip, can change to any key you want.
-document.addEventListener("keyup", function (event) {
+document.addEventListener("keydown", function (event) {
   if (event.key === "`") {
     event.preventDefault();
     quiz.skipClicked();
