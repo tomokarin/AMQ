@@ -1,8 +1,8 @@
 // ==UserScript==
 // @name         Show Youtube Link
 // @namespace    https://tampermonkey.net/
-// @version      1.2
-// @description  Adds a YouTube search link below the song links in Song Info.
+// @version      1.3
+// @description  Adds a YouTube search link at the bottom of SongInfo box.
 // @author       moka
 // @match        https://animemusicquiz.com/*
 // @grant        none
@@ -24,11 +24,11 @@ function applyStyles() {
     if (document.getElementById(styleId)) return;
 
     const css = `
-        #youtube-search-link-container a {
+        #ShowYoutubeLink a {
             color: rgb(68, 151, 234);
             transition: color 0.2s ease-in-out;
         }
-        #youtube-search-link-container a:hover {
+        #ShowYoutubeLink a:hover {
             color: rgb(48, 121, 204);
         }
     `;
@@ -44,7 +44,7 @@ function setup() {
 
     new Listener("answer results", (data) => {
         setTimeout(() => {
-            const oldLinkContainer = document.getElementById('youtube-search-link-container');
+            const oldLinkContainer = document.getElementById('ShowYoutubeLink');
             if (oldLinkContainer) {
                 oldLinkContainer.remove();
             }
@@ -60,7 +60,7 @@ function setup() {
             const youtubeUrl = `https://www.youtube.com/results?search_query=${youtubeQuery}`;
 
             const container = document.createElement('div');
-            container.id = 'youtube-search-link-container';
+            container.id = 'ShowYoutubeLink';
             container.style.textAlign = 'center';
 
             const link = document.createElement('a');
@@ -73,13 +73,17 @@ function setup() {
             });
             container.appendChild(link);
 
-            const songInfoLinkRow = document.getElementById('qpSongInfoLinkRow');
-            if (songInfoLinkRow && songInfoLinkRow.parentNode) {
-                songInfoLinkRow.parentNode.insertBefore(container, songInfoLinkRow.nextSibling);
+            const rateOuterContainer = document.getElementById('qpRateOuterContainer');
+            if (rateOuterContainer && rateOuterContainer.parentNode) {
+                rateOuterContainer.parentNode.insertBefore(container, rateOuterContainer);
             } else {
-                console.error("Show Youtube Link: Could not find the song info link row (#qpSongInfoLinkRow).");
+                const songInfoContainer = document.getElementById('qpSongInfoContainer');
+                if (songInfoContainer) {
+                    songInfoContainer.appendChild(container);
+                } else {
+                    console.error("Show Youtube Link: Could not find the song info container (#qpSongInfoContainer).");
+                }
             }
-
         }, 100);
     }).bindListener();
 }
