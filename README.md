@@ -7,3 +7,7 @@
 * amqKeytoSkip
 
       Use key to active skip function.
+
+* ShowYoutubeLink
+
+      Adds a YouTube search link below the song links in Song Info.
